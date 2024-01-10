@@ -6,7 +6,6 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract MyToken is ERC20 {
     constructor() ERC20("Illuminani", "ILN") {
-        _mint(msg.sender, 100 ** ERC20.decimals()); // Here value = 18
+        _mint(msg.sender, 100 ** ERC20.decimals()); // Here ERC20.decimals() = 18
     }
 }
-
