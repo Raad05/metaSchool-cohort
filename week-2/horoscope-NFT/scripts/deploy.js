@@ -1,15 +1,15 @@
 const { ethers } = require("hardhat");
 
 const main = async () => {
-  const contractFactory = await ethers.getContractFactory("Greeter");
-  const contract = await contractFactory.deploy("Hello World");
-
   console.log("Deploying contract...");
+
+  const contractFactory = await ethers.getContractFactory("HoroscopeNFT");
+  const contract = await contractFactory.deploy();
 
   await contract.waitForDeployment();
 
-  const contractAddress = contract.getAddress();
-  console.log("Greeter contract address:", contractAddress);
+  const contractAddress = contract.target;
+  console.log("HoroscopeNFT contract address:", contractAddress);
   console.log("Contract deployed successfully.");
 };
 
